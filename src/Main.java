@@ -114,19 +114,20 @@ public class Main {
     }
 
 
-
     public static double calculateMaximalSalaryInDepartment(int department) {
         double maximalSalary = calculateMinimalEmployeeSalary();
         for (int i = 0; i < employees.length; i++) {
+            if (employees[i] == null) {
+                employees[i].setSalary(0);
+            }
             if (employees[i].getDepartment() == department) {
                 if (maximalSalary < employees[i].getSalary()) {
                     maximalSalary = employees[i].getSalary();
                 }
-            } else {
             }
         }
         return maximalSalary;
-    }
+    }// Проверка на налл
 
 
     public static double calculateSumSalaryInDepartment(int department) {
@@ -193,24 +194,26 @@ public class Main {
         Employee employee9 = putEmployee(new Employee("Егоров Егор Егорович", 4, 85_000));
 
 //         Базовая сложность
-        printEmployees(); //a
-        printSumSalary();//b
-        printMaximalEmployeeSalary();//c
-        printMinimalEmployeeSalary(); //d
-        printAverageSalary(); //e
-        printFullNameOfEmployees(); //f
+//        printEmployees(); //a
+//        printSumSalary();//b
+//        printMaximalEmployeeSalary();//c
+//        printMinimalEmployeeSalary(); //d
+//        printAverageSalary(); //e
+//        printFullNameOfEmployees(); //f
 
 
 //         Повышенная сложность
-        doIndex(10); // 1
+//        doIndex(10); // 1
         System.out.println(calculateMinimalSalaryInDepartment(1)); //2. a
-        System.out.println(calculateMaximalSalaryInDepartment(5));//2.b
-        System.out.println(calculateSumSalaryInDepartment(5));//2.c
-        System.out.println(calculateAverageSalaryInDepartment(5));//2.d
-        doIndexInDepartment(2, 10);//2.e
-        printAllEmployeesInDepartment(1);//2.f
-        showSalaryOfEmployeesMoreThanGivenCount(100000);// 3
-        showSalaryOfEmployeesLessThanGivenCount(100000);// 3
+//        System.out.println(calculateMaximalSalaryInDepartment(5));//2.b
+//        System.out.println(calculateSumSalaryInDepartment(5));//2.c
+//        System.out.println(calculateAverageSalaryInDepartment(5));//2.d
+//        doIndexInDepartment(2, 10);//2.e
+//        printAllEmployeesInDepartment(1);//2.f
+//        showSalaryOfEmployeesMoreThanGivenCount(100000);// 3
+//        showSalaryOfEmployeesLessThanGivenCount(100000);// 3
+
+
 
 
 
